@@ -15,7 +15,7 @@ public class WordCounter {
             stopword = args[1];
         } else {
             stopword = null;
-
+        }
         Scanner keyboard = new Scanner(System.in);
 
         // userprompt
@@ -84,11 +84,11 @@ public class WordCounter {
             }
         }
         if (count < 5) {
-            throw new TooSmallText("Only " + count + " words.");
+            throw new TooSmallText("Only found " + count + " words.");
         }
 
         if (stopword != null && !stopwordFound) {
-            throw new InvalidStopwordException("No stopword found " + stopword);
+            throw new InvalidStopwordException("Couldn't find stopword: " + stopword);
         }
 
         return (stopword == null) ? count : stopcount;
